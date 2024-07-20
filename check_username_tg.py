@@ -25,15 +25,15 @@ if not os.path.exists(data_path):
 
 def ask_file_path():
     try:
-        choices_files = ['onlineData_BLB_full.json', 'onlineData_SUNRISE_full.json', 'onlineData_Sphere.json']
+        choices_files = ['onlineData_1.json', 'onlineData_2.json', 'onlineData_3.json']
         #ask for the file path with acnumbered choices , one choice in each line and a associated number for each choice, and thecinout the number of the choice
         file_path = input("Enter the file path of the data you want to retrieve users from: \n1. onlineData_BLB.json\n2. onlineData.json\n3. onlineData_Sphere.json\n")
         if file_path == "1":
-            file_path = "onlineData_BLB_full.json"
+            file_path = "onlineData_1.json"
         elif file_path == "2":
-            file_path = "onlineData_SUNRISE_full.json"
+            file_path = "onlineData_2.json"
         elif file_path == "3":
-            file_path = "onlineData_Sphere.json"
+            file_path = "onlineData_3.json"
         else:
             print("Please enter a valid choice.")
             exit()
@@ -240,18 +240,18 @@ def final_report():
     total_checked = len(exist_data) + len(does_not_exist_data)
     #calculate the percentage of users chcked based on the total number of users in onlineData_BLB_full.json and onlineData_SUNRISE_full.json and onlineData_Sphere.json
     total_users_checked = 0
-    with open(os.path.join(scrap_leads_path, 'onlineData_BLB_full.json'), 'r') as file:
+    with open(os.path.join(scrap_leads_path, 'onlineData_1.json'), 'r') as file:
         data = json.load(file)
         for entry in data:
             members = entry.get('members', [])
             total_users_checked += len(members)
-    with open(os.path.join(scrap_leads_path, 'onlineData_SUNRISE_full.json'), 'r') as file:
+    with open(os.path.join(scrap_leads_path, 'onlineData_2.json'), 'r') as file:
         data = json.load(file)
         for entry in data:
             members = entry.get('members', [])
             total_users_checked += len(members)
 
-    with open(os.path.join(scrap_leads_path, 'onlineData_Sphere.json'), 'r') as file:
+    with open(os.path.join(scrap_leads_path, 'onlineData_3.json'), 'r') as file:
         data = json.load(file)
         total_users_checked += len(data)
         
@@ -297,18 +297,18 @@ def final_report_old():
     total_checked = len(exist_data) + len(does_not_exist_data)
     #calculate the percentage of users chcked based on the total number of users in onlineData_BLB_full.json and onlineData_SUNRISE_full.json and onlineData_Sphere.json
     total_users_checked = 0
-    with open(os.path.join(scrap_leads_path, 'onlineData_BLB_full.json'), 'r') as file:
+    with open(os.path.join(scrap_leads_path, 'onlineData_1.json'), 'r') as file:
         data = json.load(file)
         for entry in data:
             members = entry.get('members', [])
             total_users_checked += len(members)
-    with open(os.path.join(scrap_leads_path, 'onlineData_SUNRISE_full.json'), 'r') as file:
+    with open(os.path.join(scrap_leads_path, 'onlineData_2.json'), 'r') as file:
         data = json.load(file)
         for entry in data:
             members = entry.get('members', [])
             total_users_checked += len(members)
 
-    with open(os.path.join(scrap_leads_path, 'onlineData_Sphere.json'), 'r') as file:
+    with open(os.path.join(scrap_leads_path, 'onlineData_3.json'), 'r') as file:
         data = json.load(file)
         for entry in data:
             members = entry.get('members', [])
